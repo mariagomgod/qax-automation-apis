@@ -14,12 +14,12 @@ Feature: Listar usuarios, registrar nuevos usuarios y realizar login
     Given la API está disponible en "https://reqres.in/api-docs/"
     When realizo una petición GET a "/api/users/1" 
     Then el código de respuesta debe ser 200
-    And la información de un usuario dee contener "id", "first_name", "last_name" y "email"
+    And la información de un usuario debe contener "id", "first_name", "last_name" y "email"
 
   Scenario: CP03 - Login de usuario
     Given la API está disponible en "https://reqres.in/api-docs/"
     When realizo una petición POST a "/api/login" con credenciales válidas:
-      """
+
         Header:
 
         {
@@ -39,7 +39,7 @@ Feature: Listar usuarios, registrar nuevos usuarios y realizar login
         {
             "token": "QpwL5tke4Pnpja7X1"
         }
-      """
+
     Then el código de respuesta debe ser 200
     And cada comentario debe contener los campos "username", "email" y "password"
 ```

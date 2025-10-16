@@ -72,8 +72,3 @@ Usando **Postman** como herramienta de prueba, construye **tres casos de prueba*
 2. Crear una colección en postman para la ejecución de cada caso
 3. Exportar la colección del postman
 4. Subir todo en el repositorio
-
-**Mensaje para el aprendiz:**
-> Usa esta historia de usuario como guía para crear tus propios casos de prueba en Postman. Asegúrate de validar códigos HTTP, revisar campos obligatorios en la respuesta y anotar cualquier comportamiento inesperado. Una vez que tengas los tests funcionando, estarás listo para automatizarlos usando Request Library.
-
-### 👈 [Volver al Training](./README.md)
