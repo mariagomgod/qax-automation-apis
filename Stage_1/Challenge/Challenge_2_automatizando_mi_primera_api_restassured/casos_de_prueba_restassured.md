@@ -41,5 +41,5 @@ Feature: Listar usuarios, registrar nuevos usuarios y realizar login
         }
 
     Then el código de respuesta debe ser 200
-    And cada comentario debe contener los campos "username", "email" y "password"
+    And la response debe contener un "token"
 ```
