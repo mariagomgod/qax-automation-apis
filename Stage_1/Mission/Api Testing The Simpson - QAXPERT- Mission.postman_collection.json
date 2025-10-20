@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "be186a03-4966-4583-a355-fd6291cece43",
+		"name": "Api Testing The Simpson - QAXPERT: Mission",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20755760",
+		"_collection_link": "https://udemy-team-0625.postman.co/workspace/QAXPERT~e466f50d-2cf5-46bb-b091-9ecc7be34c85/collection/20755760-be186a03-4966-4583-a355-fd6291cece43?action=share&source=collection_link&creator=20755760"
+	},
+	"item": [
+		{
+			"name": "Listado personajes paginado",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/characters",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"characters"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar un personaje",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/characters/20",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"characters",
+						"20"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
