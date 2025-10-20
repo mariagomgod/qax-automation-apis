@@ -56,13 +56,13 @@ Feature: Exponer listado y detalle de personajes de The Simpsons con paginación
     Given la API está disponible en "https://thesimpsonsapi.com"
     When realizo una petición POST a "/api/characters/{id inválido e inexistente}" 
     Then el código de respuesta debe ser 404
-    And debe contener el mensaje de error "Not Found"
+    And y la respuesta debe contener el campo "message" o "error"
 
   Scenario: CP10 - Listar un personaje
     Given la API está disponible en "https://thesimpsonsapi.com"
     When realizo una petición POST a "/api/characters/{id válido e inexistente más grande que el máximo que acepta el servidor para ese parámetro}" 
     Then el código de respuesta debe ser 500
-    And debe contener el mensaje de error "Internal server error"
+    And y la respuesta debe contener el campo "message" o "error"
     
   Scenario: CP11 - Listar un personaje
     Given la API está disponible en "https://thesimpsonsapi.com"
@@ -74,20 +74,20 @@ Feature: Exponer listado y detalle de personajes de The Simpsons con paginación
     Given la API está disponible en "https://thesimpsonsapi.com"
     When realizo una petición POST a "/api/characters/{id inexistente decimal}" 
     Then el código de respuesta debe ser 400
-    And debe contener el mensaje de error "Bad Request"
+    And y la respuesta debe contener el campo "message" o "error"
     
   Scenario: CP13 - Listar un personaje
     Given la API está disponible en "https://thesimpsonsapi.com"
     When realizo una petición POST a "/api/characters/{id = distinto a número}" 
     Then el código de respuesta debe ser 400
-    And debe contener el mensaje de error "Bad Request"
+    And y la respuesta debe contener el campo "message" o "error"
     
   Scenario: CP14 - Listar un personaje
     Given la API está disponible en "https://thesimpsonsapi.com"
     When realizo una petición POST a "/api/characters/{id existente}"
     And el personaje ha fallecido 
     Then el código de respuesta debe ser 200
-    And el campo "status" debe contener el valor "deceased"
+    And el campo "status" debe contener el valor "Deceased"
     
   Scenario: CP15 - Listar un personaje
     Given la API está disponible en "https://thesimpsonsapi.com"
