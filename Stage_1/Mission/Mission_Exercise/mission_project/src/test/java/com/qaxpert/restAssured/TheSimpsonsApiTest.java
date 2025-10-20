@@ -52,7 +52,9 @@ public class TheSimpsonsApiTest {
                 then()
                 .statusCode(200)
                 .contentType(startsWith("application/json"))
-                .body("prev", nullValue());
+                .body("prev", nullValue(),
+                        "next", nullValue()
+                );
     }
 
     @Test
@@ -65,7 +67,9 @@ public class TheSimpsonsApiTest {
                 then()
                 .statusCode(200)
                 .contentType(startsWith("application/json"))
-                .body("next", nullValue());
+                .body("next", nullValue(),
+                        "prev", notNullValue()
+                );
     }
 
     @Test
@@ -78,7 +82,9 @@ public class TheSimpsonsApiTest {
                 then()
                 .statusCode(200)
                 .contentType(startsWith("application/json"))
-                .body("prev", nullValue());
+                .body("prev", nullValue(),
+                        "next", notNullValue()
+                );
     }
 
     @Test
@@ -91,7 +97,9 @@ public class TheSimpsonsApiTest {
                 then()
                 .statusCode(200)
                 .contentType(startsWith("application/json"))
-                .body("prev", nullValue());
+                .body("prev", nullValue(),
+                        "next", notNullValue()
+                );
     }
 
     @Test
@@ -104,7 +112,9 @@ public class TheSimpsonsApiTest {
                 then()
                 .statusCode(200)
                 .contentType(startsWith("application/json"))
-                .body("prev", nullValue());
+                .body("prev", nullValue(),
+                        "next", notNullValue()
+                );
     }
 
     @Test
@@ -160,7 +170,7 @@ public class TheSimpsonsApiTest {
                 then()
                 .statusCode(404)
                 .contentType(startsWith("application/json"))
-                .body("$", anyOf(hasKey("error"), hasKey("message")));
+                .body("$", allOf(hasKey("error"), hasKey("message")));
     }
 
     @Test
@@ -173,7 +183,7 @@ public class TheSimpsonsApiTest {
                 then()
                 .statusCode(500)
                 .contentType(startsWith("application/json"))
-                .body("$", anyOf(hasKey("error"), hasKey("message")));
+                .body("$", hasKey("message"));
     }
 
     @Test
@@ -199,7 +209,7 @@ public class TheSimpsonsApiTest {
                 then()
                 .statusCode(400)
                 .contentType(startsWith("application/json"))
-                .body("$", anyOf(hasKey("error"), hasKey("message")));
+                .body("$", allOf(hasKey("error"), hasKey("message")));
     }
 
     @Test
@@ -212,7 +222,7 @@ public class TheSimpsonsApiTest {
                 then()
                 .statusCode(400)
                 .contentType(startsWith("application/json"))
-                .body("$", anyOf(hasKey("error"), hasKey("message")));
+                .body("$", allOf(hasKey("error"), hasKey("message")));
     }
 
     @Test

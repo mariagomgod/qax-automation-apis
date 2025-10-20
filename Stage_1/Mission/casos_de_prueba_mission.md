@@ -21,24 +21,26 @@ Feature: Exponer listado y detalle de personajes de The Simpsons con paginación
     When realizo una petición GET a "/api/characters?page={número igual a última página}" 
     Then el código de respuesta debe ser 200
     And el campo "next" debe contener el valor null
+    And el campo "prev" no debe ser null
     
   Scenario: CP04 - Listado de personajes paginado
     Given la API está disponible en "https://thesimpsonsapi.com"
     When realizo una petición GET a "/api/characters?page=0" 
     Then el código de respuesta debe ser 200
     And el campo "prev" debe contener el valor null
+    And el campo "next" no debe ser null
     
   Scenario: CP05 - Listado de personajes paginado
     Given la API está disponible en "https://thesimpsonsapi.com"
     When realizo una petición GET a "/api/characters?page={número página negativo}" 
     Then el código de respuesta debe ser 200
-    And el campo "prev" debe contener el valor null
+    And los campos "prev" y "next" deben contener el valor null
     
   Scenario: CP06 - Listado de personajes paginado
     Given la API está disponible en "https://thesimpsonsapi.com"
     When realizo una petición GET a "/api/characters?page={valor distinto a un número}" 
     Then el código de respuesta debe ser 200
-    And el campo "prev" debe contener el valor null
+    And los campos "prev" y "next" deben contener el valor null
     
   Scenario: CP07 - Listado de personajes paginado
     Given la API está disponible en "https://thesimpsonsapi.com"
@@ -56,13 +58,13 @@ Feature: Exponer listado y detalle de personajes de The Simpsons con paginación
     Given la API está disponible en "https://thesimpsonsapi.com"
     When realizo una petición POST a "/api/characters/{id inválido e inexistente}" 
     Then el código de respuesta debe ser 404
-    And y la respuesta debe contener el campo "message" o "error"
+    And la respuesta debe contener los campos "message" y "error"
 
   Scenario: CP10 - Listar un personaje
     Given la API está disponible en "https://thesimpsonsapi.com"
     When realizo una petición POST a "/api/characters/{id válido e inexistente más grande que el máximo que acepta el servidor para ese parámetro}" 
     Then el código de respuesta debe ser 500
-    And y la respuesta debe contener el campo "message" o "error"
+    And la respuesta debe contener el campo "message"
     
   Scenario: CP11 - Listar un personaje
     Given la API está disponible en "https://thesimpsonsapi.com"
@@ -74,13 +76,13 @@ Feature: Exponer listado y detalle de personajes de The Simpsons con paginación
     Given la API está disponible en "https://thesimpsonsapi.com"
     When realizo una petición POST a "/api/characters/{id inexistente decimal}" 
     Then el código de respuesta debe ser 400
-    And y la respuesta debe contener el campo "message" o "error"
+    And la respuesta debe contener los campos "message" y "error"
     
   Scenario: CP13 - Listar un personaje
     Given la API está disponible en "https://thesimpsonsapi.com"
     When realizo una petición POST a "/api/characters/{id = distinto a número}" 
     Then el código de respuesta debe ser 400
-    And y la respuesta debe contener el campo "message" o "error"
+    And la respuesta debe contener los campos "message" y "error"
     
   Scenario: CP14 - Listar un personaje
     Given la API está disponible en "https://thesimpsonsapi.com"
