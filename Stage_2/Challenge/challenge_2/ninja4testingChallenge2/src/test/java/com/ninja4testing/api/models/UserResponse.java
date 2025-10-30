@@ -1,4 +1,4 @@
-package com.ninja4testing.api.models.user;
+package com.ninja4testing.api.models;
 
 import java.util.List;
 

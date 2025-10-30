@@ -1,31 +1,69 @@
 package com.ninja4testing.api.utils;
 
-public final class RunContext {
-    private static String userName;
-    private static String password;
-    private static String userId;
-    private static String token;
+import com.ninja4testing.api.models.CommentsRequest;
+import com.ninja4testing.api.models.CommentsResponse;
+import io.restassured.response.Response;
 
-    private RunContext() {}
+import java.util.List;
 
-    public static boolean hasCreds()   { return userName != null && password != null; }
-    public static boolean hasUserId()  { return userId   != null; }
-    public static boolean hasToken()   { return token    != null; }
+public class RunContext {
 
-    public static String getUserName() { return userName; }
-    public static String getPassword() { return password; }
-    public static String getUserId()   { return userId; }
-    public static String getToken()    { return token; }
+    private static String endpoint;
+    private static Response response;
+    private static CommentsRequest requestBody;
+    private static CommentsResponse responseBody;
+    private static int postId;
+    private static List<CommentsResponse> listResponseBody;
 
-    public static void setCreds(String u, String p) { userName = u; password = p; }
-    public static void setUserId(String id)         { userId = id; }
-    public static void setToken(String t)           { token  = t;  }
+    // Constructor vacío
+    public RunContext() {}
 
-    public static void reset() { userName = password = userId = token = null; }
+    // Getters y setters
+    public static String getEndpoint() {
+        return endpoint;
+    }
 
-    public static String orUserName(String local) { return local != null ? local : userName; }
-    public static String orPassword(String local) { return local != null ? local : password; }
-    public static String orUserId(String local)   { return local != null ? local : userId; }
-    public static String orToken(String local)    { return local != null ? local : token; }
+    public static void setEndpoint(String endpoint) {
+        RunContext.endpoint = endpoint;
+    }
 
+    public static Response getResponse() {
+        return response;
+    }
+
+    public static void setResponse(Response response) {
+        RunContext.response = response;
+    }
+
+    public static CommentsRequest getRequestBody() {
+        return requestBody;
+    }
+
+    public static void setRequestBody(CommentsRequest requestBody) {
+        RunContext.requestBody = requestBody;
+    }
+
+    public static CommentsResponse getResponseBody() {
+        return responseBody;
+    }
+
+    public static void setResponseBody(CommentsResponse responseBody) {
+        RunContext.responseBody = responseBody;
+    }
+
+    public static int getPostId() {
+        return postId;
+    }
+
+    public static void setPostId(int postId) {
+        RunContext.postId = postId;
+    }
+
+    public static List<CommentsResponse> getListResponseBody() {
+        return listResponseBody;
+    }
+
+    public static void setListResponseBody(List<CommentsResponse> listResponseBody) {
+        RunContext.listResponseBody = listResponseBody;
+    }
 }
