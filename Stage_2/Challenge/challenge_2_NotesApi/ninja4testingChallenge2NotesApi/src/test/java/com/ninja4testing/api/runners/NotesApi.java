@@ -11,6 +11,7 @@ import static io.cucumber.junit.platform.engine.Constants.PLUGIN_PROPERTY_NAME;
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "com.ninja4testing.api.steps")
 @ConfigurationParameter(key = PLUGIN_PROPERTY_NAME,
         value = "pretty, summary, html:target/cucumber-report.html, json:target/cucumber.json")
-public class GoRestRunner {
+
+public class NotesApi {
 
 }
