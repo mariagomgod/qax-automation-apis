@@ -1,4 +1,4 @@
-# Quick Task
+Quick Task
 ---
 - 📁 Carpeta: `Stage_1/Quick_Task/QuickTask1/src/main/java/MiFicha.java`
 - **Objetivo:** Poner en práctica conceptos clave de automatización y testing de manera rápida y enfocada.
@@ -18,7 +18,7 @@
 ---
 ## Ejercicio 1. Java ☕
 
-**Instrucciones:**
+**Instrucciones y ejecución de las pruebas:**
 
 - Crea un archivo llamado `MiFicha.java`.
 - Dentro, guarda tu información en variables:
@@ -60,9 +60,15 @@ Tienes dos formas de usar Postman:
 2. Haz clic en **Sign In** o **Sign Up** para registrarte.
 3. Podrás usar Postman directamente en tu navegador con las mismas funcionalidades principales.
 
-**Instrucciones:**
+**Instrucciones para descargar la colección en Postman:**
 
-- Descarga el archivo `Api Testing - QAXPERT.postman_collection - QuickTask2.json`
+- Descarga el fichero de colección `Api Testing - QAXPERT.postman_collection - QuickTask2.json` desde GitHub.
+  - Pasos:
+  1. Entra al repositorio de GitHub.
+  2. Navega hasta el archivo de la colección (el .json de Postman).
+  3. Haz clic en el nombre del archivo para abrirlo.
+  4. Arriba a la derecha, pulsa el botón “Download raw file” o el icono de Download (a veces está bajo el botón “Raw” → clic derecho → Guardar enlace como...).
+  5. Guárdalo en tu PC, por ejemplo en Descargas.
 - Abre Postman en tu máquina o en el cliente web
 - Arriba a la izquierda en el menú hamburguesa haz click en **File** -> **Import** 
 - Selecciona **Upload Files** y carga el archivo `Api Testing - QAXPERT.postman_collection - QuickTask2.json`
