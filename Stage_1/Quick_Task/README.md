@@ -33,7 +33,7 @@
 - Cambia el valor de la edad sumándole 1 (como si hubieras cumplido años) y vuelve a mostrarlo en pantalla.
 - **Cómo ejecutar las pruebas:**
   1. Desde tu IDE:
-     Haz clic derecho sobre la clase MiPrimerTest → Run / Ejecutar.
+     Haz clic derecho sobre la clase MiFicha → Run / Ejecutar.
 
   2. Desde la terminal con Maven:
 
